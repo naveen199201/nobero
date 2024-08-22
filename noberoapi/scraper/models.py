@@ -11,6 +11,7 @@ class Product(models.Model):
     available_skus = models.TextField()
     description = models.TextField()
     specifications = models.TextField()
+    img = models.TextField()
 
     def __str__(self):
         return self.title

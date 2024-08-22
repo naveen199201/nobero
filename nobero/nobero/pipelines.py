@@ -27,33 +27,38 @@ class DjangoPipeline:
     
     @sync_to_async
     def save_item(self, item):
-        logger.info(f"Processing item: {item.get('title', 'No Title')}")
+        try:
+            logger.info(f"Processing item: {item.get('title', 'No Title')}")
 
-        # Save the scraped data into the Django model
-        product, created = Product.objects.get_or_create(
-            url=item['url'],
-            defaults={
-                'title': item['title'],
-                'price': item['price'],
-                'mrp': item['mrp'],
-                'last_7_day_sale': item['last_7_day_sale'],
-                'available_skus': item['available_skus'],
-                'description': item['description'],
-                'specifications': item['specifications'],
-            }
-        )
-        if not created:
-            product.title = item['title']
-            product.price = item['price']
-            product.mrp = item['mrp']
-            product.last_7_day_sale = item['last_7_day_sale']
-            product.available_skus = item['available_skus']
-            product.description = item['description']
-            product.specifications = item['specifications']
-            product.save()
+            # Save the scraped data into the Django model
+            product, created = Product.objects.get_or_create(
+                url=item['url'],
+                defaults={
+                    'title': item['title'],
+                    'price': item['price'],
+                    'mrp': item['mrp'],
+                    'last_7_day_sale': item['last_7_day_sale'],
+                    'available_skus': item['available_skus'],
+                    'description': item['description'],
+                    'specifications': item['specifications'],
+                    'img':item["img"],
+                }
+            )
+            if not created:
+                product.title = item['title']
+                product.price = item['price']
+                product.mrp = item['mrp']
+                product.last_7_day_sale = item['last_7_day_sale']
+                product.available_skus = item['available_skus']
+                product.description = item['description']
+                product.specifications = item['specifications']
+                product.img = item["img"]
+                product.save()
 
-        logger.info(f"Item saved: {product}")
-        return item
+            logger.info(f"Item saved: {product}")
+            return item
+        except Exception as e:
+            logger.error(f"Failed to save item: {item} with error {e}")
 
     async def process_item(self, item, spider):
         logger.debug(f"Processing item: {item}")
