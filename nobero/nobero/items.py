@@ -15,4 +15,5 @@ class ProductItem(scrapy.Item):
     available_skus = scrapy.Field()
     description = scrapy.Field()
     specifications = scrapy.Field()
+    img = scrapy.Field()
     # color_sizes = scrapy.Field()
