@@ -37,22 +37,15 @@ const Filters = ({ filters, setFilters,uniqueColors }) => {
 
   return (
     <div>
-    <Box sx={{display:'flex', justifyContent:'space-between'}}>
+    <Box className="filter-box">
       <h2 className="filter-heading">Filters</h2>
-      <Button
-        onClick={clearFilters}
-        style={{
-          border: "none",
-          cursor: "pointer",
-        }}
-        className="showmore"
-      >
+      <Button onClick={clearFilters}>
         Clear All
       </Button>
-      </Box>
+    </Box>
 
       <div>
-        <Box sx={{display:'flex', justifyContent:'space-between'}}>
+        <Box className="filter-box" >
         <h3>Price</h3>
         <Button onClick={() => setShowMorePrices(!showMorePrices)} className="showmore">
           {showMorePrices ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
@@ -67,7 +60,7 @@ const Filters = ({ filters, setFilters,uniqueColors }) => {
         ]
           .slice(0, showMorePrices ? undefined : 4)
           .map((price, index) => (
-            <div key={index}>
+            <div key={index} className="prices">
               <input
                 type="radio"
                 name="price"
@@ -80,7 +73,7 @@ const Filters = ({ filters, setFilters,uniqueColors }) => {
           ))}
       </div>
       <div>
-        <Box sx={{display:'flex', justifyContent:'space-between'}}>
+        <Box className="filter-box">
         <h3>Colors</h3>
         <Button onClick={() => setShowMoreColors(!showMoreColors)} className="showmore">
           {showMoreColors ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
@@ -89,7 +82,7 @@ const Filters = ({ filters, setFilters,uniqueColors }) => {
         {uniqueColors
           .slice(0, showMoreColors ? undefined : 4)
           .map((color, index) => (
-            <div key={index}>
+            <div key={index} className="colors">
               <input
                 type="checkbox"
                 name="color"
@@ -102,7 +95,7 @@ const Filters = ({ filters, setFilters,uniqueColors }) => {
           ))}
       </div>
       <div>
-        <Box sx={{display:'flex', justifyContent:'space-between'}}>
+        <Box className="filter-box">
         <h3>Size</h3>
         <Button onClick={() => setShowMoreSizes(!showMoreSizes)}>
           {showMoreSizes ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
@@ -111,7 +104,7 @@ const Filters = ({ filters, setFilters,uniqueColors }) => {
         {["S", "M", "L", "XL", "XXL", "XXXL"]
           .slice(0, showMoreSizes ? undefined : 4)
           .map((size, index) => (
-            <div key={index}>
+            <div key={index} className="sizes">
               <input
                 type="radio"
                 name="size"

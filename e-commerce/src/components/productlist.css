@@ -1,0 +1,11 @@
+.scroll {
+    overflow-y: scroll;
+    /* Allows scrolling */
+    height: 90vh;
+    /* Set a fixed height for the scrollable container */
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar */
+}

@@ -7,3 +7,16 @@
     padding: 0px !important;
     margin-block: 0px !important;
 }
+.sizes{
+    margin-block: 10px !important;
+}
+.colors{
+    margin-block: 10px !important;
+}
+.prices{
+    margin-block: 10px !important;
+}
+.filter-box{
+    display: flex !important;
+    justify-content: space-between !important;
+}
