@@ -1,0 +1,20 @@
+.product-detail{
+    margin-inline: 10vw;
+    margin-block: 5vh;
+}
+.size-button {
+    padding: 10px 40px !important;
+    border: 1px solid #b8b9bf !important;
+    border-radius: 50px !important;
+    margin-inline: 10px !important;
+    /* margin-block: 30px !important; */
+}
+
+.hightlights-item{
+    flex: 1 1 calc(50% - 10px); /* Calculate width of items */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
