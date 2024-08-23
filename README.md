@@ -52,6 +52,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Screenshot
 
 ![Project Screenshot](e-commerce/src/images/ProductList.png)
+
+Product Details page
+
 ![Project Screenshot](e-commerce/src/images/Product.png)
 
 

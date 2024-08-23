@@ -187,6 +187,7 @@ const ProductList = () => {
                                                 width={"100%"}
                                                 src={'https://' + product.img}
                                                 alt={product.title}
+                                                sx={{objectFit:"fill"}}
                                             />
                                         </Card>
                                         <Typography sx={{ fontSize: "1rem", color: 'black', mt: 2 }}>
