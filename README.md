@@ -57,7 +57,9 @@ Product Details page
 
 ![Project Screenshot](e-commerce/src/images/Product.png)
 
+## Scraping
 
-
+To scrape the products from the website and save to Django database, you can use the following command
+scrapy crawl men_page 
 
 
