@@ -60,6 +60,8 @@ Product Details page
 ## Scraping
 
 To scrape the products from the website and save to Django database, you can use the following command
-scrapy crawl men_page 
 
+```sh
+scrapy crawl men_page 
+```
 
